@@ -45,10 +45,85 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AttributeRouting.Web">
+      <HintPath>E:\LOGin Code\04-03-2022\PMGSY\bin\AttributeRouting.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="AttributeRouting.Web.Mvc">
+      <HintPath>E:\LOGin Code\04-03-2022\PMGSY\bin\AttributeRouting.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="CaptchaLib, Version=1.3.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\CaptchaLib.1.3.1.0\lib\CaptchaLib.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.AspNet">
+      <HintPath>E:\LOGin Code\04-03-2022\PMGSY\bin\DotNetOpenAuth.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.Core">
+      <HintPath>E:\LOGin Code\04-03-2022\PMGSY\bin\DotNetOpenAuth.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth">
+      <HintPath>E:\LOGin Code\04-03-2022\PMGSY\bin\DotNetOpenAuth.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth.Consumer">
+      <HintPath>E:\LOGin Code\04-03-2022\PMGSY\bin\DotNetOpenAuth.OAuth.Consumer.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId">
+      <HintPath>E:\LOGin Code\04-03-2022\PMGSY\bin\DotNetOpenAuth.OpenId.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId.RelyingParty">
+      <HintPath>E:\LOGin Code\04-03-2022\PMGSY\bin\DotNetOpenAuth.OpenId.RelyingParty.dll</HintPath>
+    </Reference>
+    <Reference Include="Elmah, Version=1.2.14706.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\elmah.corelibrary.1.2.2\lib\Elmah.dll</HintPath>
+    </Reference>
+    <Reference Include="Elmah.Mvc">
+      <HintPath>E:\LOGin Code\04-03-2022\PMGSY\bin\Elmah.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="ExifLib">
+      <HintPath>E:\LOGin Code\04-03-2022\PMGSY\bin\ExifLib.dll</HintPath>
+    </Reference>
+    <Reference Include="FileTypeDetective">
+      <HintPath>E:\LOGin Code\04-03-2022\PMGSY\bin\FileTypeDetective.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.14.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\LOGin Code\04-03-2022\PMGSY\bin\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageResizer">
+      <HintPath>E:\LOGin Code\04-03-2022\PMGSY\bin\ImageResizer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\LOGin Code\04-03-2022\PMGSY\bin\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\LOGin Code\04-03-2022\PMGSY\bin\Microsoft.ReportViewer.ProcessingObjectModel.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\LOGin Code\04-03-2022\PMGSY\bin\Microsoft.ReportViewer.WebForms.DLL</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Entity.Design" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\LOGin Code\04-03-2022\PMGSY\bin\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -120,34 +195,352 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Common\ErrorLog.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="DAL\Login.cs" />
+    <Compile Include="Extensions\PMGSYSession.cs" />
+    <Compile Include="Filters\AuthorizeActionFilter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ADMIN_DEPARTMENT.cs">
+      <DependentUpon>EformEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CONTRACTOR_REGISTRATION_DETAILS.cs">
+      <DependentUpon>EformEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EformEntities.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EformEntities.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EformEntities.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EformEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EformEntities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EformEntities.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EFORM_MASTER.cs">
+      <DependentUpon>EformEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EFORM_MASTER_WORK_ITEM.cs">
+      <DependentUpon>EformEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EFORM_PIU_GENERAL_INFO.cs">
+      <DependentUpon>EformEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EFORM_PIU_MIX_DESIGN_DETAILS.cs">
+      <DependentUpon>EformEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EFORM_PIU_PREVIOUS_INSP_DETAILS.cs">
+      <DependentUpon>EformEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EFORM_PIU_PRGS_DETAILS.cs">
+      <DependentUpon>EformEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EFORM_PIU_QC__DETAILS.cs">
+      <DependentUpon>EformEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EFORM_QC_OFFICIAL_DETAILS.cs">
+      <DependentUpon>EformEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EFORM_QM_ARRANGEMENTS_OBS_DETAILS.cs">
+      <DependentUpon>EformEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EFORM_QM_GEOMETRICS_DETAILS.cs">
+      <DependentUpon>EformEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EFORM_QM_GEOMETRICS_OBS_DETAILS.cs">
+      <DependentUpon>EformEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EFORM_QM_PRESENT_WORK_DETAILS.cs">
+      <DependentUpon>EformEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EFORM_QM_QC_TEST_DETAILS.cs">
+      <DependentUpon>EformEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EFORM_QM_QUALITY_ATTENTION.cs">
+      <DependentUpon>EformEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EFORM_QM_TEST_RESULT_VERIFICATION_DETAILS.cs">
+      <DependentUpon>EformEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EXEC_LSB_MONTHLY_STATUS.cs">
+      <DependentUpon>EformEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EXEC_ROADS_MONTHLY_STATUS.cs">
+      <DependentUpon>EformEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IMS_SANCTIONED_PROJECTS.cs">
+      <DependentUpon>EformEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Models\MASTER_AGENCY.cs">
+      <DependentUpon>EformEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MASTER_BLOCK.cs">
+      <DependentUpon>EformEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MASTER_CONTRACTOR.cs">
+      <DependentUpon>EformEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MASTER_DISTRICT.cs">
+      <DependentUpon>EformEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MASTER_MONTH.cs">
+      <DependentUpon>EformEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MASTER_STATE.cs">
+      <DependentUpon>EformEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MASTER_YEAR.cs">
+      <DependentUpon>EformEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UM_Action_Master.cs">
+      <DependentUpon>EformEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UM_Citizen_User_Master.cs">
+      <DependentUpon>EformEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UM_Css_Master.cs">
+      <DependentUpon>EformEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UM_HomePage_Master.cs">
+      <DependentUpon>EformEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UM_Language_Master.cs">
+      <DependentUpon>EformEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UM_Level_Combination.cs">
+      <DependentUpon>EformEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UM_Level_Master.cs">
+      <DependentUpon>EformEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UM_MENU_FUND_TYPE_COMBINATION.cs">
+      <DependentUpon>EformEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UM_Menu_Master.cs">
+      <DependentUpon>EformEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UM_MENU_SCHEME_TYPE_COMBINATION.cs">
+      <DependentUpon>EformEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UM_Module_Master.cs">
+      <DependentUpon>EformEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UM_Role_Action_Mapping.cs">
+      <DependentUpon>EformEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UM_Role_Level_Mapping.cs">
+      <DependentUpon>EformEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UM_Role_Master.cs">
+      <DependentUpon>EformEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UM_Role_Menu_Mapping.cs">
+      <DependentUpon>EformEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UM_Rpt_Menu_Master.cs">
+      <DependentUpon>EformEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UM_Security_Question_Answer.cs">
+      <DependentUpon>EformEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UM_Security_Question_Master.cs">
+      <DependentUpon>EformEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UM_User_Log.cs">
+      <DependentUpon>EformEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UM_User_Master.cs">
+      <DependentUpon>EformEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UM_User_Profile.cs">
+      <DependentUpon>EformEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UM_User_Role_Mapping.cs">
+      <DependentUpon>EformEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Readme\Elmah.txt" />
+    <Content Include="Content\960.css" />
+    <Content Include="Content\base.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\dashboard.css" />
+    <Content Include="Content\defaultTheme.css" />
+    <Content Include="Content\demos.css" />
+    <Content Include="Content\demo_page.css" />
+    <Content Include="Content\demo_table_jui.css" />
+    <Content Include="Content\Help Mapping Habitations.PNG" />
+    <Content Include="Content\Highmaps.css" />
+    <Content Include="Content\jquery-ui.css" />
+    <Content Include="Content\jquery.fileupload-ui.css" />
+    <Content Include="Content\jquery.multiselect.css" />
+    <Content Include="Content\jquery.qtip.css" />
+    <Content Include="Content\jquery.qtip.min.css" />
+    <Content Include="Content\jquery.ui.timepicker.css" />
+    <Content Include="Content\jqx.base.css" />
+    <Content Include="Content\layout-default-latest.css" />
+    <Content Include="Content\Login\images\bg.png" />
+    <Content Include="Content\Login\images\bg_image.jpg" />
+    <Content Include="Content\Login\images\bg_image_rotated.jpg" />
+    <Content Include="Content\Login\images\error.png" />
+    <Content Include="Content\Login\images\login-sprite.png" />
+    <Content Include="Content\Login\images\pmgsy_logo.png" />
+    <Content Include="Content\Login\images\ZenBG-1.png" />
+    <Content Include="Content\Login\images\ZenBG-2.png" />
+    <Content Include="Content\Login\login-sprite.png" />
+    <Content Include="Content\Login\Login.css" />
+    <Content Include="Content\Login\LoginBackground.jpg" />
+    <Content Include="Content\Login\LoginPage.css" />
+    <Content Include="Content\menu.css" />
+    <Content Include="Content\myTheme.css" />
+    <Content Include="Content\TableTools.css" />
+    <Content Include="Content\TableTools_JUI.css" />
+    <Content Include="Content\themes\Humanity\images\gradient.jpg" />
+    <Content Include="Content\themes\Humanity\images\gradient.png" />
+    <Content Include="Content\themes\Humanity\images\gradient1.png" />
+    <Content Include="Content\themes\Humanity\images\gradient4.png" />
+    <Content Include="Content\themes\Humanity\images\ui-bg_flat_100_f8f8d0_40x100.png" />
+    <Content Include="Content\themes\Humanity\images\ui-bg_flat_75_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\Humanity\images\ui-bg_flat_75_f9ddbf_40x100.png" />
+    <Content Include="Content\themes\Humanity\images\ui-bg_highlight-hard_100_fccc6b_1x100.png" />
+    <Content Include="Content\themes\Humanity\images\ui-bg_highlight-hard_25_fccc6b_1x100.png" />
+    <Content Include="Content\themes\Humanity\images\ui-bg_highlight-hard_65_fee4bd_1x100.png" />
+    <Content Include="Content\themes\Humanity\images\ui-bg_highlight-hard_75_FFFF99_1x100.png" />
+    <Content Include="Content\themes\Humanity\images\ui-bg_highlight-soft_70_efede4_1x100.png" />
+    <Content Include="Content\themes\Humanity\images\ui-bg_inset-soft_100_f6f3ec_1x100.png" />
+    <Content Include="Content\themes\Humanity\images\ui-icons_423d3a_256x240.png" />
+    <Content Include="Content\themes\Humanity\images\ui-icons_c47a23_256x240.png" />
+    <Content Include="Content\themes\Humanity\images\ui-icons_cb672b_256x240.png" />
+    <Content Include="Content\themes\Humanity\images\ui-icons_f08000_256x240.png" />
+    <Content Include="Content\themes\Humanity\images\ui-icons_f35f07_256x240.png" />
+    <Content Include="Content\themes\Humanity\images\ui-icons_ff7519_256x240.png" />
+    <Content Include="Content\themes\Humanity\jquery-ui-1.9.2.custom.css" />
+    <Content Include="Content\themes\Humanity\js\jquery-ui-1.9.2.custom.js" />
+    <Content Include="Content\themes\menu.css" />
+    <Content Include="Content\themes\ui.jqgrid.css" />
+    <Content Include="Content\ui.datepick.css" />
+    <Content Include="Content\ui.jqgrid.css" />
+    <Content Include="Content\UserManager.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
-    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
-    <Content Include="Scripts\jquery-3.4.1.js" />
-    <Content Include="Scripts\jquery-3.4.1.min.js" />
-    <Content Include="Scripts\jquery-3.4.1.slim.js" />
-    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <Content Include="Models\EformEntities.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EformEntities.Context.cs</LastGenOutput>
+      <DependentUpon>EformEntities.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\EformEntities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EformEntities.edmx</DependentUpon>
+      <LastGenOutput>EformEntities.cs</LastGenOutput>
+    </Content>
+    <EntityDeploy Include="Models\EformEntities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>EformEntities.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\EformEntities.edmx.diagram">
+      <DependentUpon>EformEntities.edmx</DependentUpon>
+    </Content>
+    <Content Include="Scripts\AddEditAuthorisedSignatory.js" />
+    <Content Include="Scripts\AddNewUserDetails.js" />
+    <Content Include="Scripts\AuthorizedSignatoryDetails.js" />
+    <Content Include="Scripts\captcha.js" />
+    <Content Include="Scripts\ChartOfAccounts.js" />
+    <Content Include="Scripts\chosen.jquery.min.js" />
+    <Content Include="Scripts\custom\Generic.js" />
+    <Content Include="Scripts\custom\GenericUIControl.js" />
+    <Content Include="Scripts\deployJava.js" />
+    <Content Include="Scripts\DialogForm.js" />
+    <Content Include="Scripts\ExportHtmlToXLS.js" />
+    <Content Include="Scripts\GetMenuItemDetails.js" />
+    <Content Include="Scripts\grid.locale-en.js" />
+    <Content Include="Scripts\highcharts-export.js" />
+    <Content Include="Scripts\index.js" />
+    <None Include="Scripts\jquery-1.7.2.intellisense.js" />
+    <None Include="Scripts\jquery-1.9.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.9.1.js" />
+    <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <Content Include="Scripts\jquery-ui-latest.js" />
+    <Content Include="Scripts\jquery-ui.js" />
+    <Content Include="Scripts\jquery.address-1.6.min.js" />
+    <Content Include="Scripts\jquery.blockUI.js" />
+    <Content Include="Scripts\jquery.blockUI.min.js" />
+    <Content Include="Scripts\jquery.cycle.all.js" />
+    <Content Include="Scripts\jquery.jqGrid.min.js" />
+    <Content Include="Scripts\jquery.jqGrid.src.js" />
+    <Content Include="Scripts\jquery.json-2.2.min.js" />
+    <Content Include="Scripts\jquery.layout-1.3.0.rc30.80.js" />
+    <Content Include="Scripts\jquery.migrate.js" />
+    <Content Include="Scripts\jquery.multiselect.min.js" />
+    <Content Include="Scripts\jquery.qtip.js" />
+    <Content Include="Scripts\jquery.qtip.validation.js" />
+    <Content Include="Scripts\jquery.rotate.1-1.js" />
+    <Content Include="Scripts\jquery.themeswitcher.js" />
+    <Content Include="Scripts\jquery.ui.accordion.js" />
+    <Content Include="Scripts\jquery.ui.autocomplete.js" />
+    <Content Include="Scripts\jquery.ui.button.js" />
+    <Content Include="Scripts\jquery.ui.core.js" />
+    <Content Include="Scripts\jquery.ui.datepicker.js" />
+    <Content Include="Scripts\jquery.ui.datepicker.min.js" />
+    <Content Include="Scripts\jquery.ui.dialog.js" />
+    <Content Include="Scripts\jquery.ui.draggable.js" />
+    <Content Include="Scripts\jquery.ui.droppable.js" />
+    <Content Include="Scripts\jquery.ui.effect-blind.js" />
+    <Content Include="Scripts\jquery.ui.effect-bounce.js" />
+    <Content Include="Scripts\jquery.ui.effect-clip.js" />
+    <Content Include="Scripts\jquery.ui.effect-drop.js" />
+    <Content Include="Scripts\jquery.ui.effect-explode.js" />
+    <Content Include="Scripts\jquery.ui.effect-fade.js" />
+    <Content Include="Scripts\jquery.ui.effect-fold.js" />
+    <Content Include="Scripts\jquery.ui.effect-highlight.js" />
+    <Content Include="Scripts\jquery.ui.effect-pulsate.js" />
+    <Content Include="Scripts\jquery.ui.effect-scale.js" />
+    <Content Include="Scripts\jquery.ui.effect-shake.js" />
+    <Content Include="Scripts\jquery.ui.effect-slide.js" />
+    <Content Include="Scripts\jquery.ui.effect-transfer.js" />
+    <Content Include="Scripts\jquery.ui.effect.js" />
+    <Content Include="Scripts\jquery.ui.menu.js" />
+    <Content Include="Scripts\jquery.ui.menubar.js" />
+    <Content Include="Scripts\jquery.ui.mouse.js" />
+    <Content Include="Scripts\jquery.ui.position.js" />
+    <Content Include="Scripts\jquery.ui.progressbar.js" />
+    <Content Include="Scripts\jquery.ui.resizable.js" />
+    <Content Include="Scripts\jquery.ui.selectable.js" />
+    <Content Include="Scripts\jquery.ui.slider.js" />
+    <Content Include="Scripts\jquery.ui.sortable.js" />
+    <Content Include="Scripts\jquery.ui.spinner.js" />
+    <Content Include="Scripts\jquery.ui.tabs.js" />
+    <Content Include="Scripts\jquery.ui.timepicker.js" />
+    <Content Include="Scripts\jquery.ui.tooltip.js" />
+    <Content Include="Scripts\jquery.ui.widget.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\knockout-2.1.0.debug.js" />
+    <Content Include="Scripts\knockout-2.1.0.js" />
+    <Content Include="Scripts\Layout.js" />
+    <Content Include="Scripts\Login\Login.js" />
+    <Content Include="Scripts\Login\md5.js" />
+    <Content Include="Scripts\menubar.js" />
+    <Content Include="Scripts\modernizr-2.5.3.js" />
+    <None Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -159,13 +552,10 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -177,8 +567,15 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="packages.config" />
-    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
-    <Content Include="Scripts\jquery-3.4.1.min.map" />
+    <Content Include="Scripts\jquery-1.9.1.min.map" />
+    <Content Include="Scripts\jquery.ui.datepicker.min.js.map" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
