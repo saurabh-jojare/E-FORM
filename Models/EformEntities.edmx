@@ -196,6 +196,7 @@
           <Property Name="DUE_END_DATE" Type="date" />
           <Property Name="ACTUAL_START_DATE" Type="date" />
           <Property Name="ACTUAL_END_DATE" Type="date" />
+          <Property Name="DELAY_MONTH" Type="float" />
           <Property Name="IPADD" Type="varchar" MaxLength="15" Nullable="false" />
         </EntityType>
         <EntityType Name="EFORM_PIU_QC _DETAILS">
@@ -908,6 +909,132 @@
           <Property Name="ID" Type="int" Nullable="false" />
           <Property Name="UserId" Type="int" Nullable="false" />
           <Property Name="RoleId" Type="smallint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UM_Menu_Master_SHADOW">
+          <Key>
+            <PropertyRef Name="AuditId" />
+          </Key>
+          <Property Name="AuditId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MenuID" Type="int" Nullable="false" />
+          <Property Name="MenuName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="ParentID" Type="int" Nullable="false" />
+          <Property Name="LevelGroupCode" Type="int" Nullable="false" />
+          <Property Name="Sequence" Type="smallint" Nullable="false" />
+          <Property Name="HorizontalSequence" Type="smallint" Nullable="false" />
+          <Property Name="VerticalLevel" Type="smallint" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="MenucombinationCode" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="FundTypeCombinationCode" Type="smallint" />
+          <Property Name="AuditAction" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="AuditDate" Type="datetime" Nullable="false" />
+          <Property Name="AuditUser" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="AuditApp" Type="varchar" MaxLength="128" />
+        </EntityType>
+        <EntityType Name="UM_Role_Action_Mapping_SHADOW">
+          <Key>
+            <PropertyRef Name="AuditId" />
+          </Key>
+          <Property Name="AuditId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="RoleId" Type="smallint" Nullable="false" />
+          <Property Name="Controller" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Action" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="AuditAction" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="AuditDate" Type="datetime" Nullable="false" />
+          <Property Name="AuditUser" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="AuditApp" Type="varchar" MaxLength="128" />
+        </EntityType>
+        <EntityType Name="UM_Role_Level_Mapping_SHADOW">
+          <Key>
+            <PropertyRef Name="AuditId" />
+          </Key>
+          <Property Name="AuditId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="RoleID" Type="smallint" Nullable="false" />
+          <Property Name="LevelID" Type="smallint" Nullable="false" />
+          <Property Name="AuditAction" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="AuditDate" Type="datetime" Nullable="false" />
+          <Property Name="AuditUser" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="AuditApp" Type="varchar" MaxLength="128" />
+        </EntityType>
+        <EntityType Name="UM_Role_Menu_Mapping_SHADOW">
+          <Key>
+            <PropertyRef Name="AuditId" />
+          </Key>
+          <Property Name="AuditId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MenuID" Type="int" Nullable="false" />
+          <Property Name="RoleID" Type="smallint" Nullable="false" />
+          <Property Name="isAdd" Type="bit" />
+          <Property Name="isEdit" Type="bit" />
+          <Property Name="isDelete" Type="bit" />
+          <Property Name="AuditAction" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="AuditDate" Type="datetime" Nullable="false" />
+          <Property Name="AuditUser" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="AuditApp" Type="varchar" MaxLength="128" />
+        </EntityType>
+        <EntityType Name="UM_USER_MASTER_SHADOW">
+          <Key>
+            <PropertyRef Name="AuditId" />
+          </Key>
+          <Property Name="AuditId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="UserName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="LevelID" Type="smallint" Nullable="false" />
+          <Property Name="DefaultRoleID" Type="smallint" Nullable="false" />
+          <Property Name="Mast_State_Code" Type="int" />
+          <Property Name="Mast_District_Code" Type="int" />
+          <Property Name="Admin_ND_Code" Type="int" />
+          <Property Name="Password" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="FailedPasswordAttempts" Type="int" />
+          <Property Name="FailedPasswordAnswerAttempts" Type="int" />
+          <Property Name="LastPasswordChangedDate" Type="datetime" />
+          <Property Name="LastLoginDate" Type="datetime" />
+          <Property Name="PreferedLanguageID" Type="smallint" Nullable="false" />
+          <Property Name="PreferedCssID" Type="smallint" Nullable="false" />
+          <Property Name="IsFirstLogin" Type="bit" Nullable="false" />
+          <Property Name="IsLocked" Type="bit" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="ConcurrentLoginCount" Type="smallint" Nullable="false" />
+          <Property Name="MaxConcurrentLoginsAllowed" Type="smallint" />
+          <Property Name="CreationDate" Type="datetime" Nullable="false" />
+          <Property Name="Remarks" Type="varchar" MaxLength="200" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="AuditAction" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="AuditDate" Type="datetime" Nullable="false" />
+          <Property Name="AuditUser" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="AuditApp" Type="varchar" MaxLength="128" />
+        </EntityType>
+        <EntityType Name="UM_USER_MASTER_SHADOW_13Apr2021">
+          <Key>
+            <PropertyRef Name="AuditId" />
+          </Key>
+          <Property Name="AuditId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="UserName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="LevelID" Type="smallint" Nullable="false" />
+          <Property Name="DefaultRoleID" Type="smallint" Nullable="false" />
+          <Property Name="Mast_State_Code" Type="int" />
+          <Property Name="Mast_District_Code" Type="int" />
+          <Property Name="Admin_ND_Code" Type="int" />
+          <Property Name="Password" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="FailedPasswordAttempts" Type="int" />
+          <Property Name="FailedPasswordAnswerAttempts" Type="int" />
+          <Property Name="LastPasswordChangedDate" Type="datetime" />
+          <Property Name="LastLoginDate" Type="datetime" />
+          <Property Name="PreferedLanguageID" Type="smallint" Nullable="false" />
+          <Property Name="PreferedCssID" Type="smallint" Nullable="false" />
+          <Property Name="IsFirstLogin" Type="bit" Nullable="false" />
+          <Property Name="IsLocked" Type="bit" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="ConcurrentLoginCount" Type="smallint" Nullable="false" />
+          <Property Name="MaxConcurrentLoginsAllowed" Type="smallint" />
+          <Property Name="CreationDate" Type="datetime" Nullable="false" />
+          <Property Name="Remarks" Type="varchar" MaxLength="200" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="AuditAction" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="AuditDate" Type="datetime" Nullable="false" />
+          <Property Name="AuditUser" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="AuditApp" Type="varchar" MaxLength="128" />
         </EntityType>
         <Association Name="FK_ADMIN_DEPARTMENT_MASTER_AGENCY">
           <End Role="MASTER_AGENCY" Type="Self.MASTER_AGENCY" Multiplicity="1" />
@@ -2003,6 +2130,12 @@
           <EntitySet Name="UM_User_Master" EntityType="Self.UM_User_Master" Schema="omms" store:Type="Tables" />
           <EntitySet Name="UM_User_Profile" EntityType="Self.UM_User_Profile" Schema="omms" store:Type="Tables" />
           <EntitySet Name="UM_User_Role_Mapping" EntityType="Self.UM_User_Role_Mapping" Schema="omms" store:Type="Tables" />
+          <EntitySet Name="UM_Menu_Master_SHADOW" EntityType="Self.UM_Menu_Master_SHADOW" Schema="OmmsLog" store:Type="Tables" />
+          <EntitySet Name="UM_Role_Action_Mapping_SHADOW" EntityType="Self.UM_Role_Action_Mapping_SHADOW" Schema="OmmsLog" store:Type="Tables" />
+          <EntitySet Name="UM_Role_Level_Mapping_SHADOW" EntityType="Self.UM_Role_Level_Mapping_SHADOW" Schema="OmmsLog" store:Type="Tables" />
+          <EntitySet Name="UM_Role_Menu_Mapping_SHADOW" EntityType="Self.UM_Role_Menu_Mapping_SHADOW" Schema="OmmsLog" store:Type="Tables" />
+          <EntitySet Name="UM_USER_MASTER_SHADOW" EntityType="Self.UM_USER_MASTER_SHADOW" Schema="OmmsLog" store:Type="Tables" />
+          <EntitySet Name="UM_USER_MASTER_SHADOW_13Apr2021" EntityType="Self.UM_USER_MASTER_SHADOW_13Apr2021" Schema="OmmsLog" store:Type="Tables" />
           <AssociationSet Name="FK_ADMIN_DEPARTMENT_MASTER_AGENCY" Association="Self.FK_ADMIN_DEPARTMENT_MASTER_AGENCY">
             <End Role="MASTER_AGENCY" EntitySet="MASTER_AGENCY" />
             <End Role="ADMIN_DEPARTMENT" EntitySet="ADMIN_DEPARTMENT" />
@@ -2577,6 +2710,7 @@
           <NavigationProperty Name="EFORM_MASTER_WORK_ITEM" Relationship="Self.FK_EFORM_PIU_PRGS_DETAILS_EFORM_MASTER_WORK_ITEM" FromRole="EFORM_PIU_PRGS_DETAILS" ToRole="EFORM_MASTER_WORK_ITEM" />
           <NavigationProperty Name="IMS_SANCTIONED_PROJECTS" Relationship="Self.FK_EFORM_PIU_PRGS_DETAILS_IMS_SANCTIONED_PROJECTS" FromRole="EFORM_PIU_PRGS_DETAILS" ToRole="IMS_SANCTIONED_PROJECTS" />
           <NavigationProperty Name="UM_User_Master" Relationship="Self.FK_EFORM_PIU_PRGS_DETAILS_UM_User_Master" FromRole="EFORM_PIU_PRGS_DETAILS" ToRole="UM_User_Master" />
+          <Property Name="DELAY_MONTH" Type="Double" />
         </EntityType>
         <EntityType Name="EFORM_PIU_QC__DETAILS">
           <Key>
@@ -4675,6 +4809,12 @@
             <End Role="UM_User_Master" EntitySet="UM_User_Master" />
             <End Role="MASTER_AGENCY" EntitySet="MASTER_AGENCY" />
           </AssociationSet>
+          <EntitySet Name="UM_Menu_Master_SHADOW" EntityType="EformModel.UM_Menu_Master_SHADOW" />
+          <EntitySet Name="UM_Role_Action_Mapping_SHADOW" EntityType="EformModel.UM_Role_Action_Mapping_SHADOW" />
+          <EntitySet Name="UM_Role_Level_Mapping_SHADOW" EntityType="EformModel.UM_Role_Level_Mapping_SHADOW" />
+          <EntitySet Name="UM_Role_Menu_Mapping_SHADOW" EntityType="EformModel.UM_Role_Menu_Mapping_SHADOW" />
+          <EntitySet Name="UM_USER_MASTER_SHADOW_13Apr2021" EntityType="EformModel.UM_USER_MASTER_SHADOW_13Apr2021" />
+          <EntitySet Name="UM_USER_MASTER_SHADOW" EntityType="EformModel.UM_USER_MASTER_SHADOW" />
         </EntityContainer>
         <EntityType Name="CONTRACTOR_REGISTRATION_DETAILS">
           <Key>
@@ -4877,6 +5017,132 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="UM_Menu_Master_SHADOW">
+          <Key>
+            <PropertyRef Name="AuditId" />
+          </Key>
+          <Property Name="AuditId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MenuID" Type="Int32" Nullable="false" />
+          <Property Name="MenuName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ParentID" Type="Int32" Nullable="false" />
+          <Property Name="LevelGroupCode" Type="Int32" Nullable="false" />
+          <Property Name="Sequence" Type="Int16" Nullable="false" />
+          <Property Name="HorizontalSequence" Type="Int16" Nullable="false" />
+          <Property Name="VerticalLevel" Type="Int16" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="MenucombinationCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FundTypeCombinationCode" Type="Int16" />
+          <Property Name="AuditAction" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="AuditDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="AuditUser" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AuditApp" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="UM_Role_Action_Mapping_SHADOW">
+          <Key>
+            <PropertyRef Name="AuditId" />
+          </Key>
+          <Property Name="AuditId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="RoleId" Type="Int16" Nullable="false" />
+          <Property Name="Controller" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Action" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="AuditAction" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="AuditDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="AuditUser" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AuditApp" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="UM_Role_Level_Mapping_SHADOW">
+          <Key>
+            <PropertyRef Name="AuditId" />
+          </Key>
+          <Property Name="AuditId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="RoleID" Type="Int16" Nullable="false" />
+          <Property Name="LevelID" Type="Int16" Nullable="false" />
+          <Property Name="AuditAction" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="AuditDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="AuditUser" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AuditApp" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="UM_Role_Menu_Mapping_SHADOW">
+          <Key>
+            <PropertyRef Name="AuditId" />
+          </Key>
+          <Property Name="AuditId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MenuID" Type="Int32" Nullable="false" />
+          <Property Name="RoleID" Type="Int16" Nullable="false" />
+          <Property Name="isAdd" Type="Boolean" />
+          <Property Name="isEdit" Type="Boolean" />
+          <Property Name="isDelete" Type="Boolean" />
+          <Property Name="AuditAction" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="AuditDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="AuditUser" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AuditApp" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="UM_USER_MASTER_SHADOW_13Apr2021">
+          <Key>
+            <PropertyRef Name="AuditId" />
+          </Key>
+          <Property Name="AuditId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="LevelID" Type="Int16" Nullable="false" />
+          <Property Name="DefaultRoleID" Type="Int16" Nullable="false" />
+          <Property Name="Mast_State_Code" Type="Int32" />
+          <Property Name="Mast_District_Code" Type="Int32" />
+          <Property Name="Admin_ND_Code" Type="Int32" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="FailedPasswordAttempts" Type="Int32" />
+          <Property Name="FailedPasswordAnswerAttempts" Type="Int32" />
+          <Property Name="LastPasswordChangedDate" Type="DateTime" Precision="3" />
+          <Property Name="LastLoginDate" Type="DateTime" Precision="3" />
+          <Property Name="PreferedLanguageID" Type="Int16" Nullable="false" />
+          <Property Name="PreferedCssID" Type="Int16" Nullable="false" />
+          <Property Name="IsFirstLogin" Type="Boolean" Nullable="false" />
+          <Property Name="IsLocked" Type="Boolean" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="ConcurrentLoginCount" Type="Int16" Nullable="false" />
+          <Property Name="MaxConcurrentLoginsAllowed" Type="Int16" />
+          <Property Name="CreationDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Remarks" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="AuditAction" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="AuditDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="AuditUser" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AuditApp" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="UM_USER_MASTER_SHADOW">
+          <Key>
+            <PropertyRef Name="AuditId" />
+          </Key>
+          <Property Name="AuditId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="LevelID" Type="Int16" Nullable="false" />
+          <Property Name="DefaultRoleID" Type="Int16" Nullable="false" />
+          <Property Name="Mast_State_Code" Type="Int32" />
+          <Property Name="Mast_District_Code" Type="Int32" />
+          <Property Name="Admin_ND_Code" Type="Int32" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="FailedPasswordAttempts" Type="Int32" />
+          <Property Name="FailedPasswordAnswerAttempts" Type="Int32" />
+          <Property Name="LastPasswordChangedDate" Type="DateTime" Precision="3" />
+          <Property Name="LastLoginDate" Type="DateTime" Precision="3" />
+          <Property Name="PreferedLanguageID" Type="Int16" Nullable="false" />
+          <Property Name="PreferedCssID" Type="Int16" Nullable="false" />
+          <Property Name="IsFirstLogin" Type="Boolean" Nullable="false" />
+          <Property Name="IsLocked" Type="Boolean" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="ConcurrentLoginCount" Type="Int16" Nullable="false" />
+          <Property Name="MaxConcurrentLoginsAllowed" Type="Int16" />
+          <Property Name="CreationDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Remarks" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="AuditAction" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="AuditDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="AuditUser" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AuditApp" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -5047,6 +5313,7 @@
           <EntitySetMapping Name="EFORM_PIU_PRGS_DETAILS">
             <EntityTypeMapping TypeName="EformModel.EFORM_PIU_PRGS_DETAILS">
               <MappingFragment StoreEntitySet="EFORM_PIU_PRGS_DETAILS">
+                <ScalarProperty Name="DELAY_MONTH" ColumnName="DELAY_MONTH" />
                 <ScalarProperty Name="PROGRESS_ID" ColumnName="PROGRESS_ID" />
                 <ScalarProperty Name="DETAIL_ID" ColumnName="DETAIL_ID" />
                 <ScalarProperty Name="ADMIN_ND_CODE" ColumnName="ADMIN_ND_CODE" />
@@ -5825,6 +6092,138 @@
               <MappingFragment StoreEntitySet="MASTER_YEAR">
                 <ScalarProperty Name="MAST_YEAR_TEXT" ColumnName="MAST_YEAR_TEXT" />
                 <ScalarProperty Name="MAST_YEAR_CODE" ColumnName="MAST_YEAR_CODE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UM_Menu_Master_SHADOW">
+            <EntityTypeMapping TypeName="EformModel.UM_Menu_Master_SHADOW">
+              <MappingFragment StoreEntitySet="UM_Menu_Master_SHADOW">
+                <ScalarProperty Name="AuditApp" ColumnName="AuditApp" />
+                <ScalarProperty Name="AuditUser" ColumnName="AuditUser" />
+                <ScalarProperty Name="AuditDate" ColumnName="AuditDate" />
+                <ScalarProperty Name="AuditAction" ColumnName="AuditAction" />
+                <ScalarProperty Name="FundTypeCombinationCode" ColumnName="FundTypeCombinationCode" />
+                <ScalarProperty Name="MenucombinationCode" ColumnName="MenucombinationCode" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="VerticalLevel" ColumnName="VerticalLevel" />
+                <ScalarProperty Name="HorizontalSequence" ColumnName="HorizontalSequence" />
+                <ScalarProperty Name="Sequence" ColumnName="Sequence" />
+                <ScalarProperty Name="LevelGroupCode" ColumnName="LevelGroupCode" />
+                <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+                <ScalarProperty Name="MenuName" ColumnName="MenuName" />
+                <ScalarProperty Name="MenuID" ColumnName="MenuID" />
+                <ScalarProperty Name="AuditId" ColumnName="AuditId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UM_Role_Action_Mapping_SHADOW">
+            <EntityTypeMapping TypeName="EformModel.UM_Role_Action_Mapping_SHADOW">
+              <MappingFragment StoreEntitySet="UM_Role_Action_Mapping_SHADOW">
+                <ScalarProperty Name="AuditApp" ColumnName="AuditApp" />
+                <ScalarProperty Name="AuditUser" ColumnName="AuditUser" />
+                <ScalarProperty Name="AuditDate" ColumnName="AuditDate" />
+                <ScalarProperty Name="AuditAction" ColumnName="AuditAction" />
+                <ScalarProperty Name="Action" ColumnName="Action" />
+                <ScalarProperty Name="Controller" ColumnName="Controller" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="AuditId" ColumnName="AuditId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UM_Role_Level_Mapping_SHADOW">
+            <EntityTypeMapping TypeName="EformModel.UM_Role_Level_Mapping_SHADOW">
+              <MappingFragment StoreEntitySet="UM_Role_Level_Mapping_SHADOW">
+                <ScalarProperty Name="AuditApp" ColumnName="AuditApp" />
+                <ScalarProperty Name="AuditUser" ColumnName="AuditUser" />
+                <ScalarProperty Name="AuditDate" ColumnName="AuditDate" />
+                <ScalarProperty Name="AuditAction" ColumnName="AuditAction" />
+                <ScalarProperty Name="LevelID" ColumnName="LevelID" />
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="AuditId" ColumnName="AuditId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UM_Role_Menu_Mapping_SHADOW">
+            <EntityTypeMapping TypeName="EformModel.UM_Role_Menu_Mapping_SHADOW">
+              <MappingFragment StoreEntitySet="UM_Role_Menu_Mapping_SHADOW">
+                <ScalarProperty Name="AuditApp" ColumnName="AuditApp" />
+                <ScalarProperty Name="AuditUser" ColumnName="AuditUser" />
+                <ScalarProperty Name="AuditDate" ColumnName="AuditDate" />
+                <ScalarProperty Name="AuditAction" ColumnName="AuditAction" />
+                <ScalarProperty Name="isDelete" ColumnName="isDelete" />
+                <ScalarProperty Name="isEdit" ColumnName="isEdit" />
+                <ScalarProperty Name="isAdd" ColumnName="isAdd" />
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+                <ScalarProperty Name="MenuID" ColumnName="MenuID" />
+                <ScalarProperty Name="AuditId" ColumnName="AuditId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UM_USER_MASTER_SHADOW_13Apr2021">
+            <EntityTypeMapping TypeName="EformModel.UM_USER_MASTER_SHADOW_13Apr2021">
+              <MappingFragment StoreEntitySet="UM_USER_MASTER_SHADOW_13Apr2021">
+                <ScalarProperty Name="AuditApp" ColumnName="AuditApp" />
+                <ScalarProperty Name="AuditUser" ColumnName="AuditUser" />
+                <ScalarProperty Name="AuditDate" ColumnName="AuditDate" />
+                <ScalarProperty Name="AuditAction" ColumnName="AuditAction" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="MaxConcurrentLoginsAllowed" ColumnName="MaxConcurrentLoginsAllowed" />
+                <ScalarProperty Name="ConcurrentLoginCount" ColumnName="ConcurrentLoginCount" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="IsLocked" ColumnName="IsLocked" />
+                <ScalarProperty Name="IsFirstLogin" ColumnName="IsFirstLogin" />
+                <ScalarProperty Name="PreferedCssID" ColumnName="PreferedCssID" />
+                <ScalarProperty Name="PreferedLanguageID" ColumnName="PreferedLanguageID" />
+                <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+                <ScalarProperty Name="LastPasswordChangedDate" ColumnName="LastPasswordChangedDate" />
+                <ScalarProperty Name="FailedPasswordAnswerAttempts" ColumnName="FailedPasswordAnswerAttempts" />
+                <ScalarProperty Name="FailedPasswordAttempts" ColumnName="FailedPasswordAttempts" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Admin_ND_Code" ColumnName="Admin_ND_Code" />
+                <ScalarProperty Name="Mast_District_Code" ColumnName="Mast_District_Code" />
+                <ScalarProperty Name="Mast_State_Code" ColumnName="Mast_State_Code" />
+                <ScalarProperty Name="DefaultRoleID" ColumnName="DefaultRoleID" />
+                <ScalarProperty Name="LevelID" ColumnName="LevelID" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="AuditId" ColumnName="AuditId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UM_USER_MASTER_SHADOW">
+            <EntityTypeMapping TypeName="EformModel.UM_USER_MASTER_SHADOW">
+              <MappingFragment StoreEntitySet="UM_USER_MASTER_SHADOW">
+                <ScalarProperty Name="AuditApp" ColumnName="AuditApp" />
+                <ScalarProperty Name="AuditUser" ColumnName="AuditUser" />
+                <ScalarProperty Name="AuditDate" ColumnName="AuditDate" />
+                <ScalarProperty Name="AuditAction" ColumnName="AuditAction" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="MaxConcurrentLoginsAllowed" ColumnName="MaxConcurrentLoginsAllowed" />
+                <ScalarProperty Name="ConcurrentLoginCount" ColumnName="ConcurrentLoginCount" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="IsLocked" ColumnName="IsLocked" />
+                <ScalarProperty Name="IsFirstLogin" ColumnName="IsFirstLogin" />
+                <ScalarProperty Name="PreferedCssID" ColumnName="PreferedCssID" />
+                <ScalarProperty Name="PreferedLanguageID" ColumnName="PreferedLanguageID" />
+                <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+                <ScalarProperty Name="LastPasswordChangedDate" ColumnName="LastPasswordChangedDate" />
+                <ScalarProperty Name="FailedPasswordAnswerAttempts" ColumnName="FailedPasswordAnswerAttempts" />
+                <ScalarProperty Name="FailedPasswordAttempts" ColumnName="FailedPasswordAttempts" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Admin_ND_Code" ColumnName="Admin_ND_Code" />
+                <ScalarProperty Name="Mast_District_Code" ColumnName="Mast_District_Code" />
+                <ScalarProperty Name="Mast_State_Code" ColumnName="Mast_State_Code" />
+                <ScalarProperty Name="DefaultRoleID" ColumnName="DefaultRoleID" />
+                <ScalarProperty Name="LevelID" ColumnName="LevelID" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="AuditId" ColumnName="AuditId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

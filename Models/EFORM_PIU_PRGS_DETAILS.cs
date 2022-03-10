@@ -29,6 +29,7 @@ namespace EFORM.Models
         public Nullable<System.DateTime> ACTUAL_START_DATE { get; set; }
         public Nullable<System.DateTime> ACTUAL_END_DATE { get; set; }
         public string IPADD { get; set; }
+        public Nullable<double> DELAY_MONTH { get; set; }
     
         public virtual ADMIN_DEPARTMENT ADMIN_DEPARTMENT { get; set; }
         public virtual EFORM_MASTER EFORM_MASTER { get; set; }

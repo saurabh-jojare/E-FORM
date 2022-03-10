@@ -141,6 +141,12 @@
         <EntityTypeShape EntityType="EformModel.MASTER_YEAR" Width="1.5" PointX="3.375" PointY="8.75" />
         <AssociationConnector Association="EformModel.FK_ADMIN_DEPARTMENT_MASTER_AGENCY" />
         <AssociationConnector Association="EformModel.FK_MASTER_AGENCY_UM_USER_MASTER" />
+        <EntityTypeShape EntityType="EformModel.UM_Menu_Master_SHADOW" Width="1.5" PointX="9.75" PointY="3.75" />
+        <EntityTypeShape EntityType="EformModel.UM_Role_Action_Mapping_SHADOW" Width="1.5" PointX="9.75" PointY="8.75" />
+        <EntityTypeShape EntityType="EformModel.UM_Role_Level_Mapping_SHADOW" Width="1.5" PointX="0.75" PointY="10.75" />
+        <EntityTypeShape EntityType="EformModel.UM_Role_Menu_Mapping_SHADOW" Width="1.5" PointX="11.75" PointY="0.75" />
+        <EntityTypeShape EntityType="EformModel.UM_USER_MASTER_SHADOW_13Apr2021" Width="1.5" PointX="11.75" PointY="4.75" />
+        <EntityTypeShape EntityType="EformModel.UM_USER_MASTER_SHADOW" Width="1.5" PointX="3.375" PointY="11.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

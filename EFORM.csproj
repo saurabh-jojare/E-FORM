@@ -81,6 +81,9 @@
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework.Extended, Version=6.0.0.0, Culture=neutral, PublicKeyToken=05b7e29bdd433584, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.Extended.6.1.0.168\lib\net45\EntityFramework.Extended.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
@@ -327,6 +330,9 @@
     <Compile Include="Models\UM_Menu_Master.cs">
       <DependentUpon>EformEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\UM_Menu_Master_SHADOW.cs">
+      <DependentUpon>EformEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\UM_MENU_SCHEME_TYPE_COMBINATION.cs">
       <DependentUpon>EformEntities.tt</DependentUpon>
     </Compile>
@@ -336,13 +342,22 @@
     <Compile Include="Models\UM_Role_Action_Mapping.cs">
       <DependentUpon>EformEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\UM_Role_Action_Mapping_SHADOW.cs">
+      <DependentUpon>EformEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\UM_Role_Level_Mapping.cs">
+      <DependentUpon>EformEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UM_Role_Level_Mapping_SHADOW.cs">
       <DependentUpon>EformEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\UM_Role_Master.cs">
       <DependentUpon>EformEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\UM_Role_Menu_Mapping.cs">
+      <DependentUpon>EformEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UM_Role_Menu_Mapping_SHADOW.cs">
       <DependentUpon>EformEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\UM_Rpt_Menu_Master.cs">
@@ -358,6 +373,12 @@
       <DependentUpon>EformEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\UM_User_Master.cs">
+      <DependentUpon>EformEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UM_USER_MASTER_SHADOW.cs">
+      <DependentUpon>EformEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UM_USER_MASTER_SHADOW_13Apr2021.cs">
       <DependentUpon>EformEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\UM_User_Profile.cs">
@@ -383,6 +404,86 @@
     <Content Include="Content\demo_table_jui.css" />
     <Content Include="Content\Help Mapping Habitations.PNG" />
     <Content Include="Content\Highmaps.css" />
+    <Content Include="Content\images\ajax-loader.gif" />
+    <Content Include="Content\images\arrow_down.png" />
+    <Content Include="Content\images\arrow_up.png" />
+    <Content Include="Content\images\bg1.JPG" />
+    <Content Include="Content\images\btn-slide.gif" />
+    <Content Include="Content\images\busy.gif" />
+    <Content Include="Content\images\buttonbg.png" />
+    <Content Include="Content\images\calendar_2.png" />
+    <Content Include="Content\images\close-icon.png" />
+    <Content Include="Content\images\collapse_blue.png" />
+    <Content Include="Content\images\csv_icon.png" />
+    <Content Include="Content\images\Excel.gif" />
+    <Content Include="Content\images\expand_blue.png" />
+    <Content Include="Content\images\FileIcon.png" />
+    <Content Include="Content\images\Header-e-gov-1.png" />
+    <Content Include="Content\images\Header-e-gov-3.png" />
+    <Content Include="Content\images\Header-e-gov-6.png" />
+    <Content Include="Content\images\icon_color_arrow.gif" />
+    <Content Include="Content\images\left.png" />
+    <Content Include="Content\images\left_over.png" />
+    <Content Include="Content\images\menuhoverbg.png" />
+    <Content Include="Content\images\next.jpg" />
+    <Content Include="Content\images\next1.jpg" />
+    <Content Include="Content\images\PDF.ico" />
+    <Content Include="Content\images\PDF.png" />
+    <Content Include="Content\images\Pdf_Icon.png" />
+    <Content Include="Content\images\pmg1.jpg" />
+    <Content Include="Content\images\pmg2.jpg" />
+    <Content Include="Content\images\pmgsy-logo.png" />
+    <Content Include="Content\images\prev.jpg" />
+    <Content Include="Content\images\previous.jpg" />
+    <Content Include="Content\images\print_icon.jpg" />
+    <Content Include="Content\images\print_icon.png" />
+    <Content Include="Content\images\Reader.gif" />
+    <Content Include="Content\images\refresh.png" />
+    <Content Include="Content\images\right.png" />
+    <Content Include="Content\images\right_over.png" />
+    <Content Include="Content\images\Sidebar_Search_Icon_16.png" />
+    <Content Include="Content\images\switch.png" />
+    <Content Include="Content\images\theme_90_black_matte.png" />
+    <Content Include="Content\images\theme_90_black_tie.png" />
+    <Content Include="Content\images\theme_90_blitzer.png" />
+    <Content Include="Content\images\theme_90_cupertino.png" />
+    <Content Include="Content\images\theme_90_dark_hive.png" />
+    <Content Include="Content\images\theme_90_dot_luv.png" />
+    <Content Include="Content\images\theme_90_eggplant.png" />
+    <Content Include="Content\images\theme_90_excite_bike.png" />
+    <Content Include="Content\images\theme_90_flick.png" />
+    <Content Include="Content\images\theme_90_hot_sneaks.png" />
+    <Content Include="Content\images\theme_90_humanity.png" />
+    <Content Include="Content\images\theme_90_le_frog.png" />
+    <Content Include="Content\images\theme_90_mint_choco.png" />
+    <Content Include="Content\images\theme_90_overcast.png" />
+    <Content Include="Content\images\theme_90_pepper_grinder.png" />
+    <Content Include="Content\images\theme_90_smoothness.png" />
+    <Content Include="Content\images\theme_90_south_street.png" />
+    <Content Include="Content\images\theme_90_start_menu.png" />
+    <Content Include="Content\images\theme_90_sunny.png" />
+    <Content Include="Content\images\theme_90_swanky_purse.png" />
+    <Content Include="Content\images\theme_90_trontastic.png" />
+    <Content Include="Content\images\theme_90_ui_dark.png" />
+    <Content Include="Content\images\theme_90_ui_light.png" />
+    <Content Include="Content\images\theme_90_windoze.png" />
+    <Content Include="Content\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\images\User-yellow-icon.png" />
+    <Content Include="Content\images\userborder.png" />
+    <Content Include="Content\images\VideoIcon.jpg" />
+    <Content Include="Content\images\white-arrow.gif" />
     <Content Include="Content\jquery-ui.css" />
     <Content Include="Content\jquery.fileupload-ui.css" />
     <Content Include="Content\jquery.multiselect.css" />
@@ -536,8 +637,13 @@
     <Content Include="Scripts\knockout-2.1.0.debug.js" />
     <Content Include="Scripts\knockout-2.1.0.js" />
     <Content Include="Scripts\Layout.js" />
+    <Content Include="Scripts\Login\aes.js" />
+    <Content Include="Scripts\Login\CommonFilters.js" />
     <Content Include="Scripts\Login\Login.js" />
     <Content Include="Scripts\Login\md5.js" />
+    <Content Include="Scripts\Login\RoleLogin.js" />
+    <Content Include="Scripts\Login\SwitchRole.js" />
+    <Content Include="Scripts\Login\TendorPublicationReport.js" />
     <Content Include="Scripts\menubar.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
     <None Include="Scripts\_references.js" />
@@ -553,6 +659,11 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\Login\RecoverPwdrQuestion.cshtml" />
+    <Content Include="Views\Login\RecoverPassword.cshtml" />
+    <Content Include="Views\Login\SessionExpire.cshtml" />
+    <Content Include="Views\Login\Error.cshtml" />
+    <Content Include="Views\Login\ChangePassword.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

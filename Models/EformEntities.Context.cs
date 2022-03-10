@@ -74,5 +74,11 @@ namespace EFORM.Models
         public virtual DbSet<MASTER_AGENCY> MASTER_AGENCY { get; set; }
         public virtual DbSet<MASTER_CONTRACTOR> MASTER_CONTRACTOR { get; set; }
         public virtual DbSet<MASTER_YEAR> MASTER_YEAR { get; set; }
+        public virtual DbSet<UM_Menu_Master_SHADOW> UM_Menu_Master_SHADOW { get; set; }
+        public virtual DbSet<UM_Role_Action_Mapping_SHADOW> UM_Role_Action_Mapping_SHADOW { get; set; }
+        public virtual DbSet<UM_Role_Level_Mapping_SHADOW> UM_Role_Level_Mapping_SHADOW { get; set; }
+        public virtual DbSet<UM_Role_Menu_Mapping_SHADOW> UM_Role_Menu_Mapping_SHADOW { get; set; }
+        public virtual DbSet<UM_USER_MASTER_SHADOW_13Apr2021> UM_USER_MASTER_SHADOW_13Apr2021 { get; set; }
+        public virtual DbSet<UM_USER_MASTER_SHADOW> UM_USER_MASTER_SHADOW { get; set; }
     }
 }

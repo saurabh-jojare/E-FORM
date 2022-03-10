@@ -320,67 +320,67 @@ namespace EFORM.DAL
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        //public UserAuthModel UpdatePassword(RecoverPasswordModel model)
-        //{
-        //    UserAuthModel userAuthModel = new UserAuthModel();
+        public UserAuthModel UpdatePassword(RecoverPasswordModel model)
+        {
+            UserAuthModel userAuthModel = new UserAuthModel();
 
-        //    try
-        //    {
-        //        using (var dbContext = new EformEntities())
-        //        {
-        //            var userMaster = (from u in dbContext.UM_User_Master
-        //                              where u.UserID == model.UserId
-        //                              select u).FirstOrDefault();
-
-
-        //            //Is New Password same as Old Password
-        //            if (userMaster.Password.ToUpper().Equals(model.NewPassword.ToUpper()))
-        //            {
-        //                userAuthModel.IsOldAndNewPwdrSame = true;
-        //                return userAuthModel;
-        //            }
-
-        //            //Added By Abhishek kamble 25-Apr-2014 To Check Last few Old Passwords not same as new password start
-
-        //            var UserMasterShadow = dbContext.UM_User_Master_SHADOW.Where(m => m.UserID == model.UserId).Select(s => new { s.Password, s.LastPasswordChangedDate }).Distinct().ToList();
-        //            int LastOldPasswordCount = Convert.ToInt32(System.Configuration.ConfigurationManager.AppSettings["LastOldPasswordCount"].ToString());
-
-        //            if (UserMasterShadow.Count() >= LastOldPasswordCount)
-        //            {
-        //                UserMasterShadow = UserMasterShadow.OrderByDescending(o => o.LastPasswordChangedDate).Take(LastOldPasswordCount).ToList();
-
-        //                foreach (var UserMasterShadowModel in UserMasterShadow)
-        //                {
-        //                    //Is New Password same as Old Password
-        //                    if (UserMasterShadowModel.Password.ToUpper().Equals(model.NewPassword.ToUpper()))
-        //                    {
-        //                        userAuthModel.IsOldAndNewPwdrSame = true;
-        //                        return userAuthModel;
-        //                    }
-        //                }
-        //            }
-
-        //            //Added By Abhishek kamble 25-Apr-2014 To Check Last few Old Passwords not same as new password end
+            try
+            {
+                using (var dbContext = new EformEntities())
+                {
+                    var userMaster = (from u in dbContext.UM_User_Master
+                                      where u.UserID == model.UserId
+                                      select u).FirstOrDefault();
 
 
+                    //Is New Password same as Old Password
+                    if (userMaster.Password.ToUpper().Equals(model.NewPassword.ToUpper()))
+                    {
+                        userAuthModel.IsOldAndNewPwdrSame = true;
+                        return userAuthModel;
+                    }
+                    
+                    //Added By Abhishek kamble 25-Apr-2014 To Check Last few Old Passwords not same as new password start
 
-        //            userAuthModel.IsOldAndNewPwdrSame = false;
-        //            userMaster.Password = model.NewPassword.ToUpper();
-        //            userMaster.LastPasswordChangedDate = DateTime.Now;
-        //            dbContext.Entry(userMaster).State = (System.Data.Entity.EntityState)EntityState.Modified;
-        //            dbContext.SaveChanges();
-        //        }
+                    var UserMasterShadow = dbContext.UM_USER_MASTER_SHADOW.Where(m => m.UserID == model.UserId).Select(s => new { s.Password, s.LastPasswordChangedDate }).Distinct().ToList();
+                    int LastOldPasswordCount = Convert.ToInt32(System.Configuration.ConfigurationManager.AppSettings["LastOldPasswordCount"].ToString());
 
-        //        return userAuthModel;
+                    if (UserMasterShadow.Count() >= LastOldPasswordCount)
+                    {
+                        UserMasterShadow = UserMasterShadow.OrderByDescending(o => o.LastPasswordChangedDate).Take(LastOldPasswordCount).ToList();
 
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        ErrorLog.LogError(ex, "LoginDAL.UpdatePassword");
-        //        userAuthModel.IsException = true;
-        //        return userAuthModel;
-        //    }
-        //}
+                        foreach (var UserMasterShadowModel in UserMasterShadow)
+                        {
+                            //Is New Password same as Old Password
+                            if (UserMasterShadowModel.Password.ToUpper().Equals(model.NewPassword.ToUpper()))
+                            {
+                                userAuthModel.IsOldAndNewPwdrSame = true;
+                                return userAuthModel;
+                            }
+                        }
+                    }
+
+                    //Added By Abhishek kamble 25-Apr-2014 To Check Last few Old Passwords not same as new password end
+
+
+
+                    userAuthModel.IsOldAndNewPwdrSame = false;
+                    userMaster.Password = model.NewPassword.ToUpper();
+                    userMaster.LastPasswordChangedDate = DateTime.Now;
+                    dbContext.Entry(userMaster).State = (System.Data.Entity.EntityState)EntityState.Modified;
+                    dbContext.SaveChanges();
+                }
+
+                return userAuthModel;
+
+            }
+            catch (Exception ex)
+            {
+                ErrorLog.LogError(ex, "LoginDAL.UpdatePassword");
+                userAuthModel.IsException = true;
+                return userAuthModel;
+            }
+        }
 
 
         /// <summary>
